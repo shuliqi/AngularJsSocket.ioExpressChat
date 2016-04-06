@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>叮当猫</title>
+    <link rel="stylesheet" href="./assets/style/app.css"/>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.4.3/angular.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+</head>
+<body ng-app="chatRoom" ng-controller="chatCtrl">
+<div class="chatRoom" ng-show="hasLogined">
+        <div class="chat">
+            <div class="all">
+                <h3>{{receiver?receiver:"叮当猫：群聊"}}</h3>
+            </div>
+            <div class="message">
+                 <message self="nickname" scrolltothis="scrollToBottom()" info="message" ng-repeat="message in messages"></message>
+            </div>
+            <div class="form">
+                <form novalidate name="postform" ng-submit="postMessage()">
+                    <input type="text" class="form-control" ng-model="words" placeholder="叮当猫：唠唠吧" required>
+                    <button type="submit" class="btn btn-success" ng-disabled="postform.$invalid">发送</button>
+                </form>
+            </div>
+        </div>
+        <div class="userNum">
+            <div class="onlie">
+                <h3>当前在线:</h3>
+                <span>{{users.length-1}}</span>
+            </div>
+        <div class="user">
+             <user iscurrentreceiver="receiver===user.name" info="user" ng-click="setReceiver(user.nickname)" ng-repeat="user in users"></user>
+        </div>
+        </div>
+    </div>
+    <div ng-show="!hasLogined" id="loginbox">
+        <form novalidate name="userform" ng-submit="login()" class="login">
+            <div>
+                <h2>叮当猫登录</h2>
+                 <input type="text" class="form-control" placeholder="输入你的昵称" ng-model="name" id="username" required/>
+                <button class="sub" type="submit" value="提交" ng-disabled="userform.$invalid">LOG IN</button>
+                <p>叮当猫：请加入我们一起畅谈吧</p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
