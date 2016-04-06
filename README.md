@@ -1,7 +1,8 @@
 ##前言 
 
    最近一直在学AngularJs,感觉官方的例子写完了，感觉还是掌握的不够，于是我就想做一个应用来巩固一下AngularJs。同行的都说在线聊天不错。于是考虑了一系列的原因。自己决定做一个在线聊天室。用到的知识有AngularJs,NodeJs,socket.io。其实后说的这两种，其实我也刚学不久，于是就一起巩固吧，在线聊天室很多也是参考别人的思想来做的。
-
+### 链接 
+[详情可以链接到我的博客-叮当猫-前端爱好者](http://www.shuliqiyzs.com)<br /> 
 ##步骤
 
 ### 一.环境配置
@@ -387,5 +388,4 @@ app.directive('message', ['$timeout',function($timeout) {
 }]);
 ```
 谢谢阅读
-### 链接 
-1.[点击这里你可以链接到我的博客](http://www.shuliqiyzs.com)<br /> 
+
