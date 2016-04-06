@@ -26,9 +26,10 @@
 
 ###一.环境配置
     由于我们的应用是在node.Js环境下搭建的，所以如果没有装node.js的要自行安装node.js。只需要去官方https://nodejs.org/下载node.js装上即可。其次我们需要用到express.js的http模块和socket.io框架。所以需要把这两个安装进来。在线聊天室的根目录（chat）打开命令窗口（shift + t）菜单就 会有“在此处打开命令窗口”。点击即可打开命令窗口。然后在命令窗口打出如下的命令：
-```javascript
+/** 
 npm -g express
-npm -g socket.io``
+npm -g socket.io
+*/ 
 此时环境和相应的模块搭建好了
 
 
