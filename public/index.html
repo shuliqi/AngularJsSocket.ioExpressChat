@@ -21,7 +21,7 @@
             <div class="form">
                 <form novalidate name="postform" ng-submit="postMessage()">
                     <input type="text" class="form-control" ng-model="words" placeholder="叮当猫：唠唠吧" required>
-                    <button ng-click="toggle()"type="submit" class="btn btn-success" ng-disabled="postform.$invalid">发送</button>
+                    <button type="submit" class="btn btn-success" ng-disabled="postform.$invalid">发送</button>
                 </form>
             </div>
         </div>
@@ -31,7 +31,7 @@
                 <span>{{users.length-1}}</span>
             </div>
         <div class="user">
-             <user iscurrentreceiver="receiver===user.nickname" info="user" ng-click="setReceiver(user.nickname)" ng-repeat="user in users"></user>
+             <user iscurrentreceiver="receiver===user.name" info="user" ng-click="setReceiver(user.nickname)" ng-repeat="user in users"></user>
         </div>
         </div>
     </div>
@@ -39,7 +39,7 @@
         <form novalidate name="userform" ng-submit="login()" class="login">
             <div>
                 <h2>叮当猫登录</h2>
-                 <input type="text" class="form-control" placeholder="输入你的昵称" ng-model="nickname" id="username" required/>
+                 <input type="text" class="form-control" placeholder="输入你的昵称" ng-model="name" id="username" required/>
                 <button class="sub" type="submit" value="提交" ng-disabled="userform.$invalid">LOG IN</button>
                 <p>叮当猫：请加入我们一起畅谈吧</p>
             </div>
