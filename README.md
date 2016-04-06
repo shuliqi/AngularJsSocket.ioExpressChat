@@ -5,7 +5,7 @@
 ##步骤
 
 ### 一.环境配置
-     由于我们的应用是在node.Js环境下搭建的，所以如果没有装node.js的要自行安装node.js。只需要去官方https://nodejs.org/下载node.js装上即可。其次我们需要用到express.js的http模块和socket.io框架。所以需要把这两个安装进来。在线聊天室的根目录（chat）打开命令窗口（shift + t）菜单就 会有“在此处打开命令窗口”。点击即可打开命令窗口。然后在命令窗口打出如下的命令：
+   由于我们的应用是在node.Js环境下搭建的，所以如果没有装node.js的要自行安装node.js。只需要去官方https://nodejs.org/下载node.js装上即可。其次我们需要用到express.js的http模块和socket.io框架。所以需要把这两个安装进来。在线聊天室的根目录（chat）打开命令窗口（shift + t）菜单就 会有“在此处打开命令窗口”。点击即可打开命令窗口。然后在命令窗口打出如下的命令：
 ```javascript
 npm -g express
 npm -g socket.io
@@ -39,7 +39,7 @@ npm -g socket.io
 <div class="chatRoom" ng-show="hasLogined">
 <div ng-show="!hasLogined" id="loginbox">
 ```
-  #####登录部分的html如下：
+#####登录部分的html如下：
 ```html
  <div ng-show="!hasLogined" id="loginbox">
         <form novalidate name="userform" ng-submit="login()" class="login">
@@ -82,7 +82,7 @@ npm -g socket.io
     </div>
 ```
  在这里面，我们主要用到Angular.js的两个自定义指令。user和message指令。
- #####user.html
+#####user.html
 ```html
 <div class="user">
 <span class="avatar"></span><span class="nickname">{{info.nickname?info.nickname:"群聊"}}</span>
@@ -105,7 +105,7 @@ npm -g socket.io
     </div>
 </div>
 ```
- ####2.js
+####2.js
 
 用户端的index.js
 先把相应的模块加载进来，把public共享
@@ -163,7 +163,7 @@ io.on('connection',function(data){    //只要客户端发送一个东西出来�
     })
 })
 ```
- #####最后设置本地的端口
+#####最后设置本地的端口
 ```javascript
 //设置监听端口
 http.listen(3002,function(){
@@ -171,7 +171,7 @@ http.listen(3002,function(){
 });
 ```
 
- ####客户端的js
+####客户端的js
     我们先定义两个服务socket是对socket.io的封装，这里采用的是factory服务，一共有三种创建服务的方式,factory,service,privider。randomColor,用来给用户添加一个头像的颜色的。定义一个userService服务，主要是用来判断当前的用户名在当前在线下是否已经使用
 ```javascript
 // 定义一个（依赖注入）服务,socket是对socket.io的封装，这里采用的是factory服务，一共有三种创建服务的方式,factory,service,privider
@@ -387,3 +387,5 @@ app.directive('message', ['$timeout',function($timeout) {
 }]);
 ```
 谢谢阅读
+### 链接 
+1.[点击这里你可以链接到我的博客](http://www.shuliqiyzs.com)<br /> 
